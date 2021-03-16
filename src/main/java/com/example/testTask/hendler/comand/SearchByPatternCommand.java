@@ -20,7 +20,7 @@ public class SearchByPatternCommand implements Command {
             System.out.println("Answer: No matches found");
         } else {
             System.out.print("Answer: ");
-            allByLastNameIsContaining.forEach(System.out::println);
+            allByLastNameIsContaining.forEach(l -> System.out.print(l.getName() + " " + l.getLastName()+ ", "));
         }
     }
 }

@@ -21,6 +21,10 @@ public class LectorServiceImpl implements LectorService {
 
     @Override
     public List<Lector> getAllByLastNameIsContaining(String pattern) {
-        return lectorRepository.getAllByLastNameIsContaining(pattern);
+        List<Lector> allByLastNameIsContaining = lectorRepository.getAllByLastNameIgnoreCaseIsContaining(pattern);
+        if (allByLastNameIsContaining.size() != 0) {
+            return allByLastNameIsContaining;
+        }
+        return lectorRepository.getAllByNameIgnoreCaseIsContaining(pattern);
     }
 }

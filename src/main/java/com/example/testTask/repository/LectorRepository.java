@@ -8,5 +8,6 @@ import java.util.List;
 
 @Repository
 public interface LectorRepository extends JpaRepository<Lector, Long> {
-    List<Lector> getAllByLastNameIsContaining(String pattern);
+    List<Lector> getAllByLastNameIgnoreCaseIsContaining(String pattern);
+    List<Lector> getAllByNameIgnoreCaseIsContaining(String pattern);
 }
