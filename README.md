@@ -7,7 +7,7 @@ A lector could have one degree (assistant, associate professor, professor).
   Answer: Head of {department_name} department is {head_of_department_name}
   
 # Show {department_name} statistics.
-  assistans - {assistams_count}. 
+  assistans - {assistams_count}.
   associate professors - {associate_professors_count}
   professors -{professors_count}
   
