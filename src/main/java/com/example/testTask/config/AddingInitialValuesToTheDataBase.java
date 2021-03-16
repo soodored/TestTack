@@ -115,13 +115,13 @@ public class AddingInitialValuesToTheDataBase {
         departmentService.addDepartment(technology);
 
         Departments biology = new Departments();
-        biology.setManagerDepartment(stas);
+        biology.setManagerDepartment(julia);
         biology.setLecturers(List.of(jenya, katya, julia, saha));
         biology.setName("BIOLOGY");
         departmentService.addDepartment(biology);
 
         Departments historical = new Departments();
-        historical.setManagerDepartment(stas);
+        historical.setManagerDepartment(olya);
         historical.setLecturers(List.of(vitya, dima, olya, petya));
         historical.setName("HISTORICAL");
         departmentService.addDepartment(historical);
