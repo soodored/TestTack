@@ -17,7 +17,7 @@ public class CountByPositionCommand implements Command {
 
     @Override
     public void execute(String input) {
-        List<String> list = departmentService.countByPosition(input);
+        List<String> list = departmentService.getPositionList(input);
         Set<?> set = new HashSet<>(list);
         set.forEach(l -> System.out.println(l + " - " + Collections.frequency(list, l)));
     }

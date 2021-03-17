@@ -15,7 +15,7 @@ public class SearchByPatternCommand implements Command {
 
     @Override
     public void execute(String input) {
-        List<Lector> allByLastNameIsContaining = lectorService.getAllByLastNameIsContaining(input);
+        List<Lector> allByLastNameIsContaining = lectorService.getAllByLastNameAndNameIsContaining(input);
         if (allByLastNameIsContaining.size() == 0) {
             System.out.println("Answer: No matches found");
         } else {

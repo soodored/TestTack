@@ -1,6 +1,6 @@
 package com.example.testTask.service.impl;
 
-import com.example.testTask.entity.Departments;
+import com.example.testTask.entity.Department;
 import com.example.testTask.entity.Lector;
 import com.example.testTask.repository.DepartmentsRepository;
 import com.example.testTask.service.DepartmentService;
@@ -18,14 +18,14 @@ public class DepartmentServiceImpl implements DepartmentService {
     private DepartmentsRepository departmentsRepository;
 
     @Override
-    public void addDepartment(Departments department) {
+    public void addDepartment(Department department) {
         departmentsRepository.save(department);
     }
 
     @Override
     public BigDecimal getAverageSalaryByDepartment(String department) {
         BigDecimal averageSalary = new BigDecimal("0.00");
-        Departments byName = departmentsRepository.findByName(department);
+        Department byName = departmentsRepository.findByName(department);
         List<Lector> lecturers = byName.getLecturers();
         for (Lector l : lecturers) {
             averageSalary = averageSalary.add(l.getSalary());
@@ -36,7 +36,7 @@ public class DepartmentServiceImpl implements DepartmentService {
     @Override
     public Long countAllLecturersByDepartment(String department) {
         long count = 0L;
-        Departments byName = departmentsRepository.findByName(department);
+        Department byName = departmentsRepository.findByName(department);
         if (byName != null) {
             count += byName.getLecturers().size();
             return count;
@@ -51,9 +51,9 @@ public class DepartmentServiceImpl implements DepartmentService {
     }
 
     @Override
-    public List<String> countByPosition(String department) {
+    public List<String> getPositionList(String department) {
         List<String> list = new ArrayList<>();
-        Departments byName = departmentsRepository.findByName(department);
+        Department byName = departmentsRepository.findByName(department);
         if (byName != null) {
             List<Lector> lecturers = byName.getLecturers();
             for (Lector l : lecturers) {

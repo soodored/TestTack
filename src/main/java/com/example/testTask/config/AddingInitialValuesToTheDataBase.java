@@ -1,6 +1,6 @@
 package com.example.testTask.config;
 
-import com.example.testTask.entity.Departments;
+import com.example.testTask.entity.Department;
 import com.example.testTask.entity.Lector;
 import com.example.testTask.entity.enums.Degree;
 import com.example.testTask.service.DepartmentService;
@@ -108,19 +108,19 @@ public class AddingInitialValuesToTheDataBase {
         lectorService.saveLector(vitya);
 
 
-        Departments technology = new Departments();
+        Department technology = new Department();
         technology.setManagerDepartment(stas);
         technology.setLecturers(List.of(stas, roma, nicita, vova));
         technology.setName("TECHNOLOGY");
         departmentService.addDepartment(technology);
 
-        Departments biology = new Departments();
+        Department biology = new Department();
         biology.setManagerDepartment(julia);
         biology.setLecturers(List.of(jenya, katya, julia, saha));
         biology.setName("BIOLOGY");
         departmentService.addDepartment(biology);
 
-        Departments historical = new Departments();
+        Department historical = new Department();
         historical.setManagerDepartment(olya);
         historical.setLecturers(List.of(vitya, dima, olya, petya));
         historical.setName("HISTORICAL");

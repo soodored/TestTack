@@ -9,5 +9,5 @@ import java.util.List;
 public interface LectorService {
     void saveLector(Lector lector);
 
-    List<Lector> getAllByLastNameIsContaining(String pattern);
+    List<Lector> getAllByLastNameAndNameIsContaining(String pattern);
 }
