@@ -35,26 +35,13 @@ public class Console {
             System.out.print(menu);
             String menuNumber = scanner.nextLine();
             switch (menuNumber) {
-                case "1":
-                    map.get("1").execute(departmentName());
-                    break;
-                case "2":
-                    map.get("2").execute(departmentName());
-                    break;
-                case "3":
-                    map.get("3").execute(departmentName());
-                    break;
-                case "4":
-                    map.get("4").execute(departmentName());
-                    break;
-                case "5":
-                    map.get("5").execute(pattern());
-                    break;
-                case "6":
-                    System.exit(0);
-                default:
+                case "1", "2", "3", "4" -> map.get(menuNumber).execute(departmentName());
+                case "5" -> map.get(menuNumber).execute(pattern());
+                case "6" -> System.exit(0);
+                default -> {
                     System.out.println("Incorrect input, please try again");
                     start();
+                }
             }
         }
     }
